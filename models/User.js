@@ -18,28 +18,28 @@ const UserSchema = new Schema({
             message: 'Please provide a valid e-mail.'
         }
     },
-    // thoughts: [
-    //     {
-    //         type: Schema.Types.ObjectId,
-    //         ref: 'Thoughts'
-    //     }
-    // ],
-    // friends: [
-    //     {
-    //         type: Schema.Types.ObjectId,
-    //         ref: 'User'
-    //     }
-    // ]
-    // },
-    // {
-    //     toJSON: {
-    //         virtuals: true
-    //     },
-    //     id: false
+    thoughts: [
+        {
+             type: Schema.Types.ObjectId,
+             ref: 'Thought'
+         }
+     ],
+    //  friends: [
+    //      {
+    //          type: Schema.Types.ObjectId,
+    //          ref: 'User'
+    //      }
+    //  ]
+     },
+     {
+         toJSON: {
+             virtuals: true
+         },
+         id: false
     }
 );
 
-//virtual to retireve the numbers of friends a user has
+//virtual to retireve the number of friends a user has
 // UserSchema.virtual('friendCount').get(function() {
 //     return this.friends.reduce((total, friends) => total + friends.length + 1, 0);
 // });
