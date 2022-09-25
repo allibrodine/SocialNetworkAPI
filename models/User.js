@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-// require npm validator package to validate e-mail address
+// require Validator.js package to validate e-mail address
 const validatorPackage = require('validator');
 
 const UserSchema = new Schema({
@@ -14,6 +14,7 @@ const UserSchema = new Schema({
         required: true,
         unique: true,
         validate: {
+            //call Validator.js to verify a valid e-mail address, diplay message if not
             validator: validatorPackage.isEmail,
             message: 'Please provide a valid e-mail.'
         }
